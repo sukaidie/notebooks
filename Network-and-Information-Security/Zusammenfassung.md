@@ -33,8 +33,6 @@
 
 ## 04 Classical Cryptography
 
-![](https://dl.dropboxusercontent.com/u/55616012/note/encryption.PNG)
-
 * Symmetric crypto Systems
   * ke = kd
   * keys for n Partners : (n X (n - 1)) / 2
@@ -173,3 +171,65 @@
     ```
   * ![](https://dl.dropboxusercontent.com/u/55616012/note/MD4.svg)
   * "+" means here addition modulo 32 Bits
+
+## 10 Network Security Basics
+
+* Security Solutions
+  * **Extra Functions** : Integration of security enhancing functions into existing protocols
+  * **Protocol Stacks** : Specification of additional protocols to enhance the security  of protocol stacks
+  * **Additional components** : Additional functions and network components  to improve network/communication security
+* **X.800** OSI Security Services
+  * X.800 extends **X.200** (OSI reference model) with **Security Services and related mechanisms** to cover secure communications between open systems
+* Algorithms --> Security Mechanisms --> Security Services
+* Security Goals
+  * Authentication
+  * Access Control
+  * Data Confidentiality
+  * Data Integrity
+  * Non-Repudiation
+* Examples for security mechanisms
+  * Encryption
+  * Digital Signature
+  * Access control mechanisms
+  * Data integrity mechanisms
+  * Authentication exchange mechanism
+
+![](https://dl.dropboxusercontent.com/u/55616012/note/Encryptions.svg)
+
+* Asymmetrical cryptosystem
+  * Solutions
+    * Direct contact with communication partner
+    * Certificates
+  * Distribution mechanisms
+    * Direct distribution
+    * Certifcate Server
+  * Public Key Infrastructure
+    * CA: Certification Authority
+    * CRL: Certificate Revocation List
+    * RA: Registration Authority
+
+## 11 Attack
+
+* Glossar
+  * Malware 恶意软件
+  * Botnet 僵尸网络
+  * Spamming 滥发电子讯息
+  * Phishing 钓鱼式攻击
+  * Threats 威胁
+  * Vulnerability 安全隐患，漏洞
+  * Exploit 利用程序中的某些漏洞，来得到计算机的控制权
+  * Countermeasure 反制措施
+  * Hacker 黑客
+  * Cracker 破解者
+  * Script Kid 脚本小子
+  * Virus 病毒
+  * Worm 蠕虫
+  * Trojan Horse 木马
+* Passive Attacks
+  * Glossar
+    * Wiretapping 电话窃听
+    * Eavesdropping 窃听
+    * Sniffing 吸取，一种攫取敏感数据的攻击模式，例如攫取于网络上传输之密码
+    * Interception 截取，拦截
+  * Interception of the content of the communication
+  * Collectiing and analyzing the traffic patterns
