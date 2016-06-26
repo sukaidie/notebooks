@@ -200,13 +200,23 @@
   * Solutions
     * Direct contact with communication partner
     * Certificates
-  * Distribution mechanisms
+  * Certificates - Distribution mechanisms
     * Direct distribution
     * Certifcate Server
+    * Public Key Infrastructure (PKI)
   * Public Key Infrastructure
-    * CA: Certification Authority
-    * CRL: Certificate Revocation List
-    * RA: Registration Authority
+    * **End Entity** : (Server) requests a Certificate or (Client) verifies a Certificate
+    * **CA (Certification Authority)** : issues Certificate
+    * **CRL (Certificate Revocation List)** : maintains the Repository in the form of list
+    * **RA (Registration Authority)** : handles requests and validates Information
+    * **Repository** : store Certificate and CRLs
+  * Types of Certificate
+    * Root Certificate
+    * CA Certificate
+    * End Entity Certificate
+  * Web of trust
+    * different trust level : compete, marginal, untrusted
+    * A Certificate is valid, when it is with one "compete" or two "marginal" assigned
 
 ## 11 Attack
 
@@ -215,6 +225,7 @@
   * Botnet 僵尸网络
   * Spamming 滥发电子讯息
   * Phishing 钓鱼式攻击
+  * Pharming 网址重定向
   * Threats 威胁
   * Vulnerability 安全隐患，漏洞
   * Exploit 利用程序中的某些漏洞，来得到计算机的控制权
@@ -222,6 +233,7 @@
   * Hacker 黑客
   * Cracker 破解者
   * Script Kid 脚本小子
+  * Spoofing 电子欺骗
   * Virus 病毒
   * Worm 蠕虫
   * Trojan Horse 木马
@@ -229,7 +241,82 @@
   * Glossar
     * Wiretapping 电话窃听
     * Eavesdropping 窃听
-    * Sniffing 吸取，一种攫取敏感数据的攻击模式，例如攫取于网络上传输之密码
+    * Sniffing 嗅探
     * Interception 截取，拦截
+    * IP-Spoofing IP欺骗
   * Interception of the content of the communication
   * Collectiing and analyzing the traffic patterns
+* Active Attacks
+  * Attacks on the communication relationships
+    * Man in the Middle
+    * IP Spoofing
+  * Attacks on the resources
+    * DoS (Denial of Service), TCP-SYN flooding
+* Attacks on different Layers
+
+| Physical     | Date Link       | IP            | TCP/UDP        | Appliacation    |
+| ------------ | --------------- | ------------- | -------------- | --------------- |
+| Interception | ARP Spoofing    | ICMP Packets  | Portscan       | Buffer Overflow |
+| DoS          | Man in Middle   | Ping of Death | Fingerprinting | DoS, Worms      |
+|              | DoS (Swithes)   | IP Spoofing   | DoS            | Trojans         |
+|              | Rediection      | DHCP Spoofing |                | Virus           |
+|              | Packet Sniffing |               |                | Spam            |
+
+* TCP / UDP
+
+| TCP                                 | UDP                              |
+| ----------------------------------- | -------------------------------- |
+| Conection must be first established | Date is send with initialazition |
+| Stream-based                        | Message-based                    |
+| all data is acknowledged            | No acknowledgment                |
+| Flow control                        | No Dataflow management           |
+| Ordered                             | Not Ordered                      |
+
+* TCP Header
+  * Sequence Nummer
+  * Acknowledgment Nummer
+  * Data offset
+  * TCP Flags
+    * SYN(建立连接), RST(重置), FIN(关闭)
+  * Windows Size
+  * Checksum
+  * Urgent Pointer
+* TCP and UDP Port
+  * Well-known Ports
+  * Registered Ports
+  * Dynamic / private Ports
+* Portscan
+  * **Connect Scan**
+    * open : connect() completes the three-way handshake and then immediately sent a reset (RST) packet to close the connection
+    * closed : recieves RST packet from Remote
+  * **Syn Scan**
+    * open : receives an acknowledgment to a SYN request, then sends an RST to reset the session, and the handshake is never completed.
+    * closed : recieves RST packet from Remote
+  * **Fin Scan**
+    * open : no response
+    * closed : recieves RST packet from Remote
+* **Fingerprinting** : Each OS has unique feature at the implementation of communication protocol
+* Denial of Service
+  * Resources that could be attacked
+    * Network bandwidth
+    * System resources
+    * Appliacation resources
+  * Classical DoS Attacks
+    * flooding Attacks
+    * Smurf
+    * Fraggle
+    * Syn flooding
+* Distributed Denial of Service (DDoS)
+* Buffer Overflow
+
+![](https://dl.dropboxusercontent.com/u/55616012/note/stackoverflow.svg)
+
+* Social Engineering
+  * Phishing, Viusal Spoofing, Pharming
+* Host specific measures
+  * turn on AutoUpdate
+  * disable unused Services
+  * secure necessary Services
+  * disable Access to Telnet, FTP
+  * check log
+  * install attack Detection software
