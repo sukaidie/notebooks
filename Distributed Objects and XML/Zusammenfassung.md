@@ -1,3 +1,115 @@
+## 1. Grundlagen
+
+#### Objektbasierte Systeme
+
+* Objekt-basierte Sicht
+* Der Zustand eines Objekts wird durch Primitive und die Zustände referenzierter Objekte dargestellt
+* Klassen als Typbeschreibung von Objekten
+* Datenkapselung
+
+#### Primitive Datenstrukturen
+
+* Variablen oder Konstanten
+* Wert und Identifizierer
+* Veränderung mittels Zuweisungen oder Manipulationen
+
+#### Objekte
+
+* Komposition : Einander referenzierende Objekte
+* Kapselung
+  * Schnittstelle definiert Bindung
+  * Operationen
+    * Integritätsbedingungen sicherstellen
+    * erlaubte Wertebereiche einschränken
+
+#### Klassen
+
+* Kapselung
+  * Zustandsraum
+  * Verfügbare Services
+  * Ausfall von Services
+  * Interaktionen
+* Attribute
+* Operationen
+  * In-Parametern *read only*
+  * Out-Parametern *write only*
+  * Inout-Parametern *read and write*
+  * Typ des Rückgabewertes
+  * mögliche Ausnahmen
+* Vererbung
+
+#### Komponenten
+
+* Schnittstellen
+  * Import (依赖)
+  * Export (接口协议)
+* Komposition
+  * Benutzt-Beziehung: „A benutzt B“
+  * Einbettung: „A bettet B ein“
+  * Kommunikation: „A kommuniziert mit B über C“
+* Parametrisierung (参数化，元数据配置)
+  1. Ein- / Ausgabeparameter (类方法注解 @GET)
+  2. Komponentenparameter (应用描述，依赖配置文件 web.xml, maven)
+  3. Systemparameter (系统环境变量, Context)
+
+#### Pakete
+
+* Komponenten als Bausteine der Gesamtfunktionalität
+* ejb, jar
+
+#### Deployment
+
+* Laufzeit-System (Servlet Container)
+* Darstellung des Deployments
+  * Deploymentartefakte
+
+## 2. Sichten und Modelle
+
+#### Grundlagen
+
+* Anwendungszeitpunkte
+  * Anforderungserhebung
+  * Grob- und Feinentwurf
+  * Implementierung
+  * Validierung und Verifikation
+  * Dokumentation für Nutzer
+
+#### Modelltypen
+
+* Komponenten und Schnittstellen : UML-Komponentendiagramm
+* Abläufe : UML-Sequenzdiagramm
+* Verteilung : UML-Verteilungsdiagramm
+* Schichten
+* Automaten : Zustandsautomat in UPPAAL
+* Prozesse : Prozessmodellierung in Eclipse
+* Datenmodelle : Entity-Relationship-Modelle
+* Services
+
+#### Klassifikation
+
+* Statische Aspekte, Dynamische Aspekte
+* Struktur, Verhalten
+
+#### UML Diagramm
+
+* Strukturdiagramme
+  * Klassendiagramm
+  * Objektdiagramm
+  * Kompistionsdiagramm
+  * Komponentendiagramm
+  * Paketdiagramm
+  * Verteilungsdiagramm
+* Verhaltensdiagramme
+  * Aktivitätsdiagramm
+  * Zustandsdiagramm
+  * Anwendungsfalldiagramm
+  * Interaktiondiagramme
+    * Kommunikationsdiagramm
+    * Sequenzdiagramm
+    * Timming-Diagramm
+    * Interaktionsübersichtsdiagramm
+
+
 ## 3. Verteilung
 
 #### Definition
@@ -115,11 +227,13 @@
 #### Remote Objects & Interfaces
 
 Interface Definition Language in Java
+
 ```java
-public interface Serviece extends Remote {
+public interface Service extends Remote {
     String getName() throws RemoteException;
 };
 ```
+
 **Server Stub**
 * Hat die folgenden Aufgaben:
   1. Unmarshalling des entfernten Aufrufs und der Parameter
@@ -127,18 +241,23 @@ public interface Serviece extends Remote {
   3. Marshalling des Ergebnisses
 * Einen Server-Stub erstellen
   * UnicastRemoteObject.exportObject nutzen
+
     ```java
-    public class Server implements Serviece { ... }
+    public class Server implements Service { ... }
     Server server = new Server();
-    Serviece s = (Serviece)UnicastRemoteObject.exportObject(s, 0);
+    Service service = (Service)UnicastRemoteObject.exportObject(server, 0);
     ```
+
   * Remote-Klasse erbt von UnicastRemoteObject
+
     ```java
     public class Server
     extends UnicastRemoteObject
-    implements Serviece {  ... }
+    implements Service {  ... }
     ```
+
 * Pull to Registry
+
   ```java
   // Erstellen einer Registry
   LocateRegistry.createRegistry(Registry.REGISTRY_PORT);
@@ -154,6 +273,7 @@ public interface Serviece extends Remote {
   //Bindung lösen
   r.unbind("ServieceName");  
   ```
+
 **Client-Stub**
  * Hat die folgenden Aufgaben:
    1. Erstellen einer Verbindung zur entfernten JVM
@@ -162,11 +282,13 @@ public interface Serviece extends Remote {
    4. Unmarshalling des Ergebnisses oder der Exception
    5. Ergebnis (oder Exception) an Aufrufenden weiterleiten
  * Einen Client-Stub bekommen
+
    ```java
-   Serviece serviece = (Serviece)registry.lookup("server");
+   Service service = (Service)registry.lookup("server");
    ```
+
  * Entfernte Aufruf
-   * Primitive Datentypen und Objekt werden als Kopie übertragen
+   * Primitive Datentypen un d Objekt werden als Kopie übertragen
      (Pass by value)
    * Remote Objekte werden als entfernte Referenz übertragen
      (Pass by reference)
@@ -202,13 +324,17 @@ public interface Serviece extends Remote {
       * Entitäten
       * Notationen
   * **Element** has Attributes and Text
+
     ```html
     <Element id="Attribute">Text</Element>
     ```
+
   * Process Instraction
+
     ```xml
     <?xml version="1.0" encoding="UTF-8"?>
     ```
+
   * **Name Space** *xmlns, z.B. wsd, soap, html, android*
 
     ```xml
@@ -224,12 +350,21 @@ public interface Serviece extends Remote {
     * X-Path
     * X-Pointer
 
+#### JSON
+
+* Object ```{ [ "key" : value, "key" : value, ... }```
+* Array  ```[ value, value, .... ]```
+* Value ```string | number | Object | Array | boolean | null```
+
 ## 4.5  Web Services
 
 #### Architektur
 * Interface-Beschreibung (Registry)
   * **WSDL**: Webservice Description Language
+  * Nachrichtenformat, Datentypen, Protocol, URL
 * Verzeichnisdienste (Catelog)
   * **UDDI** Universal Description, Discovery and Integration
 * Abwicklung des Aufrufs (Message)
   * **SOAP** Simple Object Access Protocol
+
+![](https://dl.dropboxusercontent.com/u/55616012/note/webservice.svg)
