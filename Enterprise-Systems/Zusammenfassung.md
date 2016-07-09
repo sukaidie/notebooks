@@ -174,3 +174,107 @@
 * Beziehungen zwischen Modellen
   * Zerlegung und Integration
   * Hierarchisierung
+
+## Kapitel 4 Strategieebene
+
+* Objekte des strategischen Managements
+  * **Strategie** langfristige Zielen
+  * **Strukturen** Organisationen
+  * **Systeme** zur Führung
+* Prozesse des strategischen Managements
+  * strategische Zielplanung
+  * Strategische Analyse
+    * Internal
+    * Externel
+  * Strategieformulierung und -auswahl
+    * Entwicklung von Strategien
+    * Beurteilung der Alternativen
+    * Entscheidung für eine Strategie
+  * StrategieImplementierung
+    * Gestaltung von Strukturen und Systemen
+    * Operationalisierung der Strategie
+    * Information, Schulung und Motivation der Mitarbeiter
+    * Kontrolle der Strategieumsetzung
+* Strategieebenen
+  * UnternehmensgesamtStrategie
+  * GeschäftsfeldStrategien
+  * Funktionsbereichsstrategie
+* Portfolio-Analyse
+  * Idee
+    * Aufteilung des Risikoproblems auf mehrere Dimensionen, in dem die Geschäftseinheiten positioniert werden
+    * Häufig verwendete Auswahl der Dimensionen
+      * Eine unternehmensbezogene Dimension
+      * Eine marktbezogene Dimension
+    * Vorgehen
+      * Definition der zwei Dimensionen
+      * Einordnung der Untersuchungsobjekte in das Portfolio
+      * Formulierung eines SOLL-Portfolios (Strategien)
+      * Permanente Überprüfung der Portfolio-Objekte und Strategien
+* Examplarische Portfoliotechnik: BCG-Matrix
+* Strategieebene: Geschäftsfeld
+  * Maßnahmen : **Wettbewerbsvorteil**
+    * **Market based view** Marktposition
+      * **Potential Entrants** Threat of Substitute Products or Service
+      * **Substitutes** Threat of New Entrants
+      * **Suppliers** Bargaining Power of Suppliers
+      * **Buyers** Bargaining Power of Buyers
+    * **Resource based view** RessourcenBasis
+  * Ziele : langfristiger Erfolg
+* Wettbewerbsvorteile von Geschäftsfeldern durch **Wettbewerbsstrategien**
+  * Ziel : Generierung von Wettbewerbsvorteilen für den langfristigen Erfolg durch eine Wettbewerbsstrategie, die sich auf die Geschäftsfeldsebene bezieht
+  * Wettbewerbsvorteil
+    * **Einzigartigkeit** Der ein für Kunden wichtiges Merkmal darstellt
+    * **Imitierbarkeit** Eine gewisse Dauerhaftigkeit besitzt, d.h. er darf von der Konkurrenz nicht so schnell aufgeholt werden
+    * **Kundenaspekt** Der vom Kunden wahrgenommen wird
+* Modellierungsebenen des Business Engineerings
+  1. Strategieebene
+     * Bestandsteile
+       * Rolle in der Wertschöpfungskette
+       * Wettbewerbsposition
+       * Kernkompetenzen
+     * Gestalten der Strategie
+       * Geschäftsnetzwerkmodelle
+       * Kundenprozessmodelle
+       * Leistungsmodelle
+       * Zielsystem
+  2. Prozessebene
+     * Bestandsteile
+       * Prozessarchitektur
+       * Funktionen innerhalb der Prozesse
+       * Informationsbedarfe
+     * Gestalten der Organisation
+       * Prozesslandkarten
+       * Prozessmodelle
+       * Aufbauorganisationsmodelle
+       * Informationslandkarten
+  3. IT Systeme
+     * Logische Ebene (Applikationsebene)
+       * Bestandsteile : Anwendungsfunktionen, Clustern, Objekte, Informationsflüsse
+       * Gestalten der Integration : Domänenmodelle, Applikationslandschaften, Fachliche Services
+     * Physische Ebene (Komponenten und Datenstrukturen)
+       * Gestalten von Software: Softwarekomponenten / Software Services, Datenmodelle
+       * Bestandsteile : SoftwareBausteine, Datenstrukturen, Softwarearchitektur, Daten
+  4. Infrastrukturebene
+     * Bestandsteile : Hardware, Netzwerk, Software
+     * Gestalten der IT-Infrastruktur : Plattform, Netzwerk
+* Strategieebene im Business Engineering: Aufgaben
+  * Festlegung der **Rolle** des Unternehmens im **Wertschöpfungsnetzwerk**
+  * Ableitung der wesentlichen **Leistungen** aus der Analyse der **Kundenprozesse**
+* Wertkettenmodell und -analyse nach Porter
+  * Definition : Jedes Unternehmen ist eine Ansammlung von Tätigkeiten, durch die sein Produkt **entworfen, hergestellt, vertrieben, ausgeliefert und unterstütztwird**. All diese Tätigkeiten lassen sich in einer Wertkette darstellen
+  * Vorgehen zur Analyse der Wertkette
+    1. Wertkettenmodell erstellen
+    2. Festlegung der Erfolgsfaktoren
+    3. Wettbewerbsvergleich mit den Konkurrenten
+    4. Veränderungen festlegen
+  * Ansatzpunkte zur Verbesserung der Wertketten mit IT
+    * Verbesserung der Wertschöpfungsaktivitäten
+      * Entscheidungsunterstützung oder –automatisierung
+      * Integration ehemals getrennter Aktivitäten
+    * Verbesserung der unterstützenden Aktivitäten
+      * Reduzierung des Aufwandes durch Automatisierung
+      * Outsourcing von Leistungen mit Integration dieser in der Wertkette
+    * Integration von Lieferanten und Kunden
+      * Electronic Data Interchange
+      * Nutzung einheitlicher System bei der Produktentwicklung und –konstruktion
+        ( standard CAD Dateiformat z.B. STP )
