@@ -155,6 +155,7 @@
   * Partial-preimage resistance
 * MD4
   * 3 auxiliary functions
+
     ```javascript
     // If X = 1, return  Y, else return Z
     var f = function (x, y, z) {
@@ -169,6 +170,7 @@
       return x ^ y ^ z;
     }
     ```
+    
   * ![](https://dl.dropboxusercontent.com/u/55616012/note/MD4.svg)
   * "+" means here addition modulo 32 Bits
 
@@ -237,13 +239,12 @@
   * Virus 病毒
   * Worm 蠕虫
   * Trojan Horse 木马
+  * Wiretapping 电话窃听
+  * Eavesdropping 窃听
+  * Sniffing 嗅探
+  * Interception 截取，拦截
+  * IP-Spoofing IP欺骗
 * Passive Attacks
-  * Glossar
-    * Wiretapping 电话窃听
-    * Eavesdropping 窃听
-    * Sniffing 嗅探
-    * Interception 截取，拦截
-    * IP-Spoofing IP欺骗
   * Interception of the content of the communication
   * Collectiing and analyzing the traffic patterns
 * Active Attacks
@@ -320,3 +321,76 @@
   * disable Access to Telnet, FTP
   * check log
   * install attack Detection software
+
+## 12 Intrusion Detection Systems
+
+* Typical Steps of network based attack
+  * Target searching *ICMP ping*
+  * Target analyzing *TCP/UDP port scan*
+  * Intrusion
+* Security level
+  * 1st. protection of internal network
+  * 2nd. network based sensor System
+  * 3rd. host based sensor System
+* Intrusion prevention System (IPS)
+  * part of firewall
+  * analyze (recognize unusual traffic) and control (drop, block) appliacation layer traffic
+* Intrusion response System (IRS)
+  * automaic real-time reaction
+  * patterns are asscociated with predefined response actions
+  * measures
+    * shutdown services and connections, session block, disable server, identification of attacker
+* Intrusion Detection System (IDS)
+  * Network IDS
+    * Anomaly-based Detection
+    * Signature/Pattern-based Detection
+      * Signature : traffic patterns
+      * Filter : Signature in a machine readable form
+      * Filter search keys at **Protocol, Ports, Flags, Strings, Binary**
+  * Host-based IDS
+* Honeypot
+* Honeynets
+
+## 13 Firewall
+
+* Definition : prevent unauthorized process or user from accessing a private Network
+* Personal Firewall
+  * Deny unauthorized remote access
+  * Monitor outgoing activity
+  * Organization puropose
+  * Interactive mode
+* Network Firewall
+  * Layer 2 Firewall
+  * Packet Filter
+    * Static Packet Filter (stateless) : pass or reject Packet based on set of rules
+      * source / destination IP
+      * source / destination Ports
+      * IP protocol field
+      * Interface
+    * Dynamic Packet Filter (stateful)
+  * Appliacation Filter (Proxy)
+    * Circuit level Gateway
+    * Appliacation level Gateway
+    * Bastion Host
+* Firewall Location and Configuration
+  * Screening router
+  * Dual-homed Host
+  * Screened basion host
+  * Screened subnet
+    * De-Militarized Zone (DMZ)
+  * Network address Translation (NAT)
+* Firewall Administration
+  * Filter rules
+    * chains : INPUT, FORWARD, OUTPUT
+    * action : ACCEPT, DROP, REJECT
+    * default Policies
+      * Whitelisting (default = drop)
+      * Blaklisting  (default = accept)
+  * iptables in Linux
+    * ``# iptables [-AI] [-io interface] [-p tcp|udp|icmp|all] [-s srcIP] [--sport range] [-d desIP] [--dport range] -j [ACCEPT|DROP|REJECT|LOG]``
+    * -A : new rule at the end
+    * -io : Interface (eth0, wlan0, etc)
+    * -p : tcp, udp, icmp and all
+    * -s : souce IP, 192.168.1.0/24
+    * -d : destination IP
+    * -j : actions, ACCEPT, DROP, REJECT, LOG
