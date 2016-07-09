@@ -172,7 +172,22 @@
 
 * **Zugriffs-Transparenz:** entfernte Komponenten verfügbar wie lokale
 * **Orts-Transparenz:** Ortsunabhängiger Name
-* **NebenläufigkeitsTransparenz:** Automatisches Serialisieren paralleler Anfragen  
+* **Nebenläufigkeits-Transparenz:** Automatisches Serialisieren paralleler Anfragen
+* **Replikations-Transparenz** mehrere Kopien eines Objektes
+* **Fehler-Transparenz** Verstecken von Fehlerzuständen
+* **Migrations-Transparenz** Objekte können an andere Orte bewegt werden
+* **Leistungs-Transparenz"** Lastverteilung
+* **Skalierbarkeits-Transparenz** funktionale Erweiterung
+
+* Reference
+  * 访问透明性：用相同的操作访问本地资源和远程资源。  
+  * 位置透明性：不需要知道资源的物理或网络位置（例如，哪个建筑物或IP地址）就能够访问它们。  
+  * 并发透明性：几个进程能并发地使用共享资源进行操作且互不干扰。  
+  * 复制透明性：使用资源的多个实例提升可靠性和性能，而用户和应用程序员无须知道副本的相关信息。  
+  * 故障透明性：屏蔽错误，不论是硬件组件故障还是软件组件故障，用户和应用程序都能够完成它们的任务。
+  * 移动透明性：资源和客户能够在系统内移动而不会影响用户或程序的操作。  
+  * 性能透明性：当负载变化时，系统能被重新配置以提高性能。  
+  * 伸缩透明性：系统和应用能够进行扩展而不改变系统结构或应用算法。
 
 ## 4. Middleware
 
@@ -181,9 +196,11 @@
 #### Vernetzte Rechensysteme
 
 * TCP und UDP
-  | TCP | bidirektionaler Fluss  | Verbindungsorientiert |
-  | --- | ---------------------- | --------------------- |
-  | UDP | Unidirektionaler Fluss | Verbindungslos        |
+
+| TCP | bidirektionaler Fluss  | Verbindungsorientiert |
+| --- | ---------------------- | --------------------- |
+| UDP | Unidirektionaler Fluss | Verbindungslos        |
+
 * Wie gehen entfernte Operationsaufrufe?
   * Operationsaufrufe in einen Bitstring schreiben (serialisieren)
   * Operationsaufruf als Pakete über das Netz schicken
@@ -206,21 +223,38 @@
   * Erhöht die Verteilungstransparenz
   * Löst die Heterogenität
   * Erfüllt einige der generelen Anforderungen für verteilte Systeme
-* **RPC** Remote Procedure Call
-  * Stubs
-    * Automatisches Marshalling / Unmarshalling
-    * bietet Typsicherheit und Synchronisation
-  * Synchronisation und Typsicherheit
-    * zwischen Server-Stub und Client-Stub
-    * **IDL** Interface Definition Language
-    * wird durch **IDL** für Client und Server erreicht
+* Prozedural
+  * **RPC** Remote Procedure Call
+    * Stubs
+      * Automatisches Marshalling / Unmarshalling
+      * bietet Typsicherheit und Synchronisation
+    * Synchronisation und Typsicherheit
+      * zwischen Server-Stub und Client-Stub
+      * **IDL** Interface Definition Language
+      * wird durch   **IDL** für Client und Server erreicht
+    * Presentation Layer
+      * Common Data Representaion (z.B. ASCII, UTF-8)
+      * unterstützt Marshalling / Unmarshalling
+    * Session Layer
+      * Identifizierung von RPC-Servern
+      * Aktivierung/Deaktivierung von RPC-Servern
+      * Verteilung der Aufrufe an die richtige Stelle
+* Obejekt-orientiert
+  * OO-Middleware leist
+    * IDL-Interface Design Language (z.B Java Interface, CORBA, WSDL)
+    * Generierung von Client- & Server-Stubs
+    * Session- & Presentation-Layer
   * Presentation Layer
-    * Common Data Representaion (z.B. ASCII, UTF-8)
-    * unterstützt Marshalling / Unmarshalling
+    * Objektreferenz (复杂类型)
+    * Ausnahmen und Behandelung (异常处理)
   * Session Layer
-    * Identifizierung von RPC-Servern
-    * Aktivierung/Deaktivierung von RPC-Servern
-    * Verteilung der Aufrufe an die richtige Stelle
+    * Objekte sind auf Unterschiedlichen Hosts
+    * Objektreferenz > Objekt-Adapter (LocateRegistry) > Host > Remote Registry > Prozess > Objekt
+  * Remote Server Prozess Registrierung (在客户端仓库内注册远程服务器服务信息)
+  * Typsicherheit
+    * Erweiterung einer Klasse
+    * Implementierung eines Interfaces
+* Nachrichten-orientiert
 
 ### 4.2 Java RMI
 
@@ -259,10 +293,12 @@ public interface Service extends Remote {
 * Pull to Registry
 
   ```java
-  // Erstellen einer Registry
+  // Creates and exports a Registry instance on the local host
+  // Accepts requests on the specified port.
   LocateRegistry.createRegistry(Registry.REGISTRY_PORT);
-  // Holen einer existierenden Registry
-  Registry r = LocateRegistry.getRegistry("10.0.0.1");
+  // Returns a reference to the remote object Registry
+  // on the specified host on the default registry port of 1099
+  Registry r = LocateRegistry.getRegistry("10.0.0.1", "1099");
   // Methoden von Registry:
   // Binden
   r.bind("ServieceName", o);
