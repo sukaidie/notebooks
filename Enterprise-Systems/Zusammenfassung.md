@@ -278,3 +278,50 @@
       * Electronic Data Interchange
       * Nutzung einheitlicher System bei der Produktentwicklung und –konstruktion
         ( standard CAD Dateiformat z.B. STP )
+
+## Kapitel 5: Prozessebene
+
+* **Process** ist die zeitlich-sachlogische Abfolge von Zuständen
+* **Geschäftsprozess** sind solche Processe, die für die Wertschöpfung (primären Aktivitäten im Sinne Porters) erforderlich sind
+* Organisation: Gegenstand der Organisationsstruktur
+  1. **Aufgabengliederung** in Teilaufgaben
+  2. **Spezialisierung** : Zuweisung der Teilaufgaben zu organisatorischen Einheiten
+  3. **Koordination** : Gewährleistung der Zusammenarbeit aller Teileinheiten
+* Ziele organisatorischer Gestaltung
+  * Koordinationseffizienz
+    * Ressourceneffizienz (Nutzung von Menschen, Maschinen)
+    * Prozesseffizienz (Durchlaufzeit, Kosten, Qualität)
+    * Markteffizienz (Beschaffungsmarkt, Absatzmarkt)
+    * Delegationseffizienz
+  * Motivationseffizienz
+* Organisationsform
+  * Funktionalorganisation
+    * lange Durchlaufzeiten
+    * Bearbeitungsfehler
+    * Doppelarbeiten
+    * Schnittstellenprobleme
+    * hohe Prozesskosten
+  * Prozessorganisation
+    * Die Aufbauorganisation folgt den Prozessen
+* Prozessmodelle
+  * Einsatzzwecke
+    * Auswahl von ERP-Software
+    * Modellbasiertes Customizing
+    * Softwareentwicklung
+    * Workflowmanagement
+    * Simulation
+  * Prozesslandkarte
+    * Überblick über Geschäftsprozesse einer Organisation
+    * Aufzeigen der Verbindung von Geschäftsprozessen zum Kunden und Partner
+    * Aufzeigen der Wechselbeziehungen zwischen Geschäftsprozessen
+  * Ereignisgesteuerte Prozesskette (EPK)
+    * **Ereignis** wodurch wird ein Process ausgelöst und beendet
+    * **Funktion** Welche Teilprozesse werden ausgeführt
+    * **Organisationseinheit** Wer ist an dem Prozess beteiligt
+    * **Informationsobjekt** Welche Daten werden verarbeitet (Input, Output)
+    * **Ablauflogik** Wie wird der Prozess abgewickelt
+      * Kontrollfluss
+      * Kante / Zuweisung
+      * ODER-Konnektor
+      * UND-Konnektor
+      * Exklusives ODER
