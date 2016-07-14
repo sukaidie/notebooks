@@ -1,3 +1,13 @@
+## Glossar
+
+* ASAP - AcceleratedSAP
+* BPM - Business ProcessManagement
+* ERP - Enterprise Resource Planning 企业资源计划
+* ISW - Individual Software
+* OCM – Organizational Change Management
+* SOA - Service OrientedArchitecture
+* SSW - Standard Software
+
 ## Kapitel 1 Grundlagen: Begriffe & Konzepte
 
 * **Problem** : Ein Problem ist das subjektive Diskrepanzempfinden zwischen einem tatsächlichen Ist- und einem gewünschten Soll-Zustand.
@@ -48,7 +58,6 @@
 | Strategisch | Vertrieb           | Top Management       |
 | Taktisch    | Materialwirtschaft | Mittleres Management |
 | Operativ    | Finazwesen         | Arbeitsebene         |
-|             | Personal           |                      |
 
 * Informationstechnologien
   * Eigenschaften der IT
@@ -325,3 +334,129 @@
       * ODER-Konnektor
       * UND-Konnektor
       * Exklusives ODER
+
+## Kapitel 6: Systemebene
+
+* Aufgaben auf Systemebene
+  * Auswahl und Beschreibung der Teilprozesse
+  * Festlegung der Applikationsarchitektur
+  * Gestaltungsziele
+    * Optimaler Schnittstelle der Applikation
+    * Optimaler Widerverwendung von Entwurfs- und Implementierungskomponenten
+* Vorgehensmodelle
+  * Vorgehensmodelle beschreiben die zeitliche Abfolge von Phasen und wann, wo und wie die grundlegende Entscheidung zu treffen sind
+  * Ziele
+    * Systematisierung des Entwicklungsprozesses
+    * Grundlage des Projektmanagements
+    * Reduzierung der mit einer Softwareentwicklung verbunden Risiken
+      * Einhaltung von Kosten-und Zeitrahmen
+      * Erreichung der geforderten Qualität
+    * Realisierbarkeit komplexer Systeme
+    * Ein Ausweg aus der Softwarekrise
+    * Standardisierung der Softwareentwicklung
+  * Prozesssicht
+    * Problemanalyse und Anforderungsdefinition
+    * Grobentwurf
+    * Komponentenentwurf
+    * Implementierung
+  * Ergebnissicht
+    * Problemstellung
+    * Anforderungsspezifikation
+    * Systemarchitektur
+    * Komponentenstruktur
+    * Code
+* Darstellungstechniken auf der Systemebene
+  * Strukturen/ Daten
+  * Benutzeroberfläche
+  * Verhalten und/ oder Funktionen
+* Traditionelle Beschreibungssprachen
+  * Datensicht
+  * Dynamik
+  * Funktionssicht
+* Entity Relationship Model
+  * Zweck von Datenrepräsentationen
+    * Diskussionsgrundlage bei Anwenderbeteiligung
+    * Grundlage für die Ableitung von Datenbankstrukturen
+  * Ergebnis: Datenmodelle
+    * Vorrangig fachlicher Bedeutungsinhalt
+    * Hohe Zeitstabilität
+* Vorgehensmodelle unter der Einführung von SSW
+  * Strategie
+    * Analyse intern & externen
+    * Problemfestlegung und strategische Zielsetzung
+  * Ist-Analyse
+    * Aufnahme von Prozessen und Datenstrukturen in der Ist-Systemlandschaft
+    * Festlegung der Kerndefizite
+    * Anforderungen für die Zukunft
+  * ERP-Systeme
+    * Abgleich der ERP-Systemlandschaft mit der Unternehmenssituation
+    * Formulierung eines Zielbildes
+  * Implementierung
+    * Vorgehen für das Spannungsfeld von ISW und SSW fixieren
+    * Customizing der Systeme
+    * Entwicklung individueller Anforderungen
+* ASAP von SAP
+  * Anforderungsdefinition
+  * Vertragsspezifikation
+  * Projektvorbereitung
+  * Blueprint
+  * Realisierung
+  * Test and Deployment
+  * Go-live Support
+* Unternehmungensarchitektur
+  * Definition : das Zusammenwirken organisatorischer, technischer und psychologischer Aspekte bei der Planungung und Entwicklung der Informationssysteme
+  * Warum wird eine Unternehmungensarchitektur benötigt
+    * duplication of function, inefficient informationexchanges, and a lack of integration
+* Architekturen im Business-Engineering-Bereich
+  * Inhalte
+    * Unternehmensstrategie
+    * Geschäftsmodell
+    * Betriebliche Aufgaben
+    * Geschäftsprozesse
+    * Anwendungsprogramme & Daten
+    * Technische Infrastruktur
+  * Funktionen
+    1. Beschreibung
+       * Abbildung der Ist-Situation
+       * dient der Kommunikationsfunktion
+    2. Gestaltungsfunktion
+       * konzeptionellen Planungs-und Gestaltungsansatzes
+       * Grundlage für viele betriebliche Aufgaben
+       *  Informationsquelle für Software-Entwicklung
+* IT-Architektur
+  * Definition : die strukturlierende Abstraktions existierender und geplanter IT-Systeme eines Unternehmens
+  * Warum wird eine IT-Architektur benötigt?
+    * Hilfsmittel für die Planung, den Betrieb, die weitere Entwicklung
+    * Die Grundlage für ein einheitliches Verständnis der Beteiligten
+  * Management
+    * Produktevaluation und auswahl
+    * Standardisierung
+    * Management der Integration
+    * Produktportfolio-Management
+    * Planung und Dokumentation
+* Reifegradmodelle
+  * Mit Hilfe von Reifegradmodellen wird dieArbeitsweise von Unternehmen bewertet
+  * Die Modelle bieten dabei eine Unterteilungin unterschiedliche Reifegrade
+  * Die Reifegrade werden als Benchmarkfür die Reife eines Unternehmens verwendet
+* Architecture Stages Model nach Ross
+
+|               | Anwendungs-Silos | Standardisierte Technologie | Rationalisierte Daten | Modular |
+| ------------- | ---------------- | --------------------------- | --------------------- | ------- |
+| Reifegrad | Die Architektur besteht aus den voneinander unabhängigen Anwendungen | Unternehmensweite IT-Architektur, die Effizienz durch Technologiestandards und ggf. Zentralisierung bietet | Die unternehmensweite IT-Architektur wird durch Daten- und Prozessstandards erweitert | Unternehmensweite Standards mit gekoppelten Anwendungen, Daten und komponenten |
+| Ziel          | Lokale/ funktionale Optimierung | Effizienz der IT | Prozessoptimierung | Strategische Auswahl |
+| Infrastruktur | Daten-Zentren    | Technologie-Standardisierung | Integration der Kernprozesse | Vernetzung der Kernprozesse |
+
+* ARIS — Architektur integrierter Informationssysteme
+  * Das ARIS-Konzept nimmt eine Dekomposition eines Problems in unterschiedliche Sichten vor.
+    * Eigenständige Perspektiven : die Organisations-, die Daten-, die Funktions-und die Leistungssicht
+    * Integrierte Sichtweite :  die Prozesssicht
+  * Die 5 Beschreibungssichten
+    * **Organisationssicht** beschreibt die Organisationseinheiten sowie ihre Strukturenund Beziehungen
+    * **Datensicht** beschreibt die Informationsobjekte sowie deren Attribute und Beziehungenuntereinander.
+    * **Funktionssicht** beschreibt die auszuführenden Funktionen/ Vorgänge
+    * **Leistungssicht** beschreibt Input-und Output-Leistungen, einschließlich der Geldflüsse
+    * **Prozesssicht** beschreibt die Verbindungen der obigen Sichten. Im Zentrum stehen damit die Geschäftsprozesse als Zusammenwirken
+  * Life-Cycle-Prinzip für die Ausprägung unterschiedlicher Ebenen
+    1. Fachhkonzept
+    2. Datenverarbeitung-Konzept
+    3. Technische Implementierung
