@@ -10,7 +10,7 @@
 * ER Diagramm
   * **1:1, 1:N, N:M**
   * Martin Notation
-  * ![]( https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/ERD_Darstellungen.png/300px-ERD_Darstellungen.png)
+  * ![](https://dl.dropboxusercontent.com/u/55616012/note/erp.svg)
 
 ## 3.0 Ableitung eines Schemas aus ER-Diagramm
 
