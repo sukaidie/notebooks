@@ -1,4 +1,4 @@
-## 02 Grundlagen
+ ## 02 Grundlagen
 
 #### Information security
 
@@ -68,24 +68,14 @@
 
 * Block cipher
   * Structure of block cipher
-
-    ![](https://dl.dropboxusercontent.com/u/55616012/note/block_cipher-1.PNG)
   * Iterative Block cipher
     * Use the same round transformation in all rounds **except of initial or final round**
-
-    ![](https://dl.dropboxusercontent.com/u/55616012/note/block_cipher-2.PNG)
   * Key-alternating block cipher
     * First round key is added before the first round
     * Last round key is added after the last round
-
-    ![](https://dl.dropboxusercontent.com/u/55616012/note/block_cipher-3.PNG)
   * Modes of Operation
     * Electronic codebook (ECB)
-
-    ![](https://dl.dropboxusercontent.com/u/55616012/note/block_cipher-4.PNG)
     * Cipher-Block chaing (CBC)
-
-    ![](https://dl.dropboxusercontent.com/u/55616012/note/block_cipher-5.PNG)
 * Stram cipher
   * Less popuar than block cipher
   * Often used in mobole appliacation
@@ -96,12 +86,9 @@
   * General Pseudo Random Number Generator
   * Cryptographically Secure Pseudo Random Number Generator
 * LSFR
-
-  ![](https://dl.dropboxusercontent.com/u/55616012/note/lfsr.png)
-
 * DES
-  ![](https://dl.dropboxusercontent.com/u/55616012/note/des.png)
-  ![](https://dl.dropboxusercontent.com/u/55616012/note/des_sbox.png)
+  * ![](https://dl.dropboxusercontent.com/u/55616012/note/DES.svg)
+
 * AES
   * Data Path
     * ![](https://dl.dropboxusercontent.com/u/55616012/note/AES.svg)
@@ -170,7 +157,7 @@
       return x ^ y ^ z;
     }
     ```
-    
+
   * ![](https://dl.dropboxusercontent.com/u/55616012/note/MD4.svg)
   * "+" means here addition modulo 32 Bits
 
@@ -394,3 +381,19 @@
     * -s : souce IP, 192.168.1.0/24
     * -d : destination IP
     * -j : actions, ACCEPT, DROP, REJECT, LOG
+
+## 14 User Authentication
+
+* Types of Authentication
+  * Password Authentication
+  * Token Authentication
+  * Biometric Authentication
+  * Remote User Authentication
+* Two-Party Authentication
+* Trusted third-party Authentication
+
+## 15-a IPSec
+
+## 15-b SSL/TLS and SSH
+
+## 16 VPN
