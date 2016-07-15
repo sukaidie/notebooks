@@ -1,11 +1,16 @@
+## 1.0 Einführung
+
+* ANSI-3 3-Ebene Modell
+  * Externe Schema
+  * Konzeptuelles Schema
+  * Internes Schema
 
 ## 2.0 Data Model and Types
 
 * ER Diagramm
   * **1:1, 1:N, N:M**
   * Martin Notation
-
-![]( https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/ERD_Darstellungen.png/300px-ERD_Darstellungen.png)
+  * ![]( https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/ERD_Darstellungen.png/300px-ERD_Darstellungen.png)
 
 ## 3.0 Ableitung eines Schemas aus ER-Diagramm
 
@@ -15,45 +20,77 @@
   * Aggregation : 聚合
   * Composition : 合成
   * Generalisierung
+  * Aggregation implies a relationship where the child can exist independently of the parent. Example: Class (parent) and Student (child). Delete the Class and the Students still exist.
+  * Composition implies a relationship where the child cannot exist independent of the parent. Example: House (parent) and Room (child). Rooms don't exist separate to a House.
+
 * 1: N : write 1 to N as Foreign Key
 * N: M : muss dazu eine Tabelle erstellt werden
 
 ## 4.0 Normalformen
 
-1. 1NF： 数据库表的每一列都是不可分割的基本数据项
-Attribtte should be automar.
-2. 2NF : 普通键依赖全部候选键，即一组候选（主）键构成超键可以标示唯一实例
-it does not exist functional dependencies between normal keys and candidate keys.
+1NF： 数据库表的每一列都是不可分割的基本数据项
+*Attribtte should be automar.*
 
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/PrimaryKey_zht.svg/280px-PrimaryKey_zht.svg.png)
-3. 3NF ： 普通键之间没有函数关系
-it does not exist functional dependencies between normal keys.
+2NF : 普通键依赖全部候选键，即一组候选（主）键构成超键可以标示唯一实例
+*it does not exist functional dependencies between normal keys and candidate keys.*
+
+3NF ： 普通键之间没有函数关系
+*it does not exist functional dependencies between normal keys.*
+
+**Bedingung zur Zerlegung**
+* Abhängigkeitstreue
+* Verbundstreue
+
 
 ## 6.5 Relationale Algebra
 
-1. **Kartesisches Produkt** $\times$
- * kommutativ
- * assoziativ
- * ( CROSS ) JOIN 的顺序及优先级不影响结果表
-2. **Vereinigung** $\cup$
-3. **Differenz** EXCEPT
-4. **Durchschnitt** INTERSECT
-5. **Selektion** $\sigma$
-6. **Projektion** $\pi$
-7. **Division**
-8. **(Innerer) Verbund** $\bowtie$
- * Kombination aus Kartesischem Produkt, Selektion nach Verbundbedingungen
- * kommutativ und assoziativ
- * **Thetaverbund** $\bowtie_\theta$
- * **Gleichverbund** $\bowtie_=$
-9. **Natürlicher Verbund**
-10. **Semiverbund**
-
-![](https://dl.dropboxusercontent.com/u/55616012/note/Verbund.png)
+* Relation
+  * keine Duplikate
+  * Keine Reihenfolge
+* Mengenoperationen
+  * **Kartesisches Produkt**
+    * kommutativ
+    * assoziativ
+    * ( CROSS ) JOIN 的顺序及优先级不影响结果表
+  * **Vereinigung**
+  * **Differenz** EXCEPT
+  * **Durchschnitt** INTERSECT
+* Relationale Operationen
+  * **Selektion**
+  * **Projektion**
+* Makrooperationen
+  * **Division**
+  * **(Innerer) Verbund**
+    * Kombination aus Kartesischem Produkt, Selektion nach Verbundbedingungen
+    * kommutativ und assoziativ
+  * **Thetaverbund**
+  * **Gleichverbund**
+  * **Natürlicher Verbund**
+  * **Semiverbund**
 
 ## 7.2 Datendefinitionsprache
 
-![](https://db.tt/RgoxNMlK)
+### Datentypen
+
+* Char
+  * fixed
+  * var
+* Time
+  * TIMESTAMP
+  * DATE
+  * TIMES
+  * INTERVAL
+* Bit
+  * fixed
+  * var
+* Nummer
+  * SMALLINT
+  * INTEGER
+  * DECIMAL
+  * NUMERIC
+  * REAL
+  * FLOAT
+  * DOUBLE
 
 ### Prädikate
 
@@ -70,7 +107,7 @@ LIKE 'M__R'
 * **NULL** ( Alle Typen )
 * **OVERLAPS** ( Interval )
 ```sql
-(TIME'09:00:00', INTERVAL'-50' MINUTE) OVERLAPS (TIME'02:15:00', INTERVAL'6' HOUR
+(TIME'09:00:00', INTERVAL'-50' MINUTE) OVERLAPS (TIME'02:15:00', INTERVAL'6' HOUR)
 ```
 
 ### Benutzerdefinierte Wertbreiche
@@ -114,9 +151,9 @@ LIKE 'M__R'
 
 * 外键必须是外表的主键
 * CHECK-Clausel
- * Über Domain
- * Über Tabelle
- * Über mehre Tabellen
+  * Über Domain
+  * Über Tabelle
+  * Über mehre Tabellen
 
 ## 7.3 Datenbank Anfrage Sprache
 
@@ -150,7 +187,55 @@ LIKE 'M__R'
 
 ## 7.4 Daten Manipulation Sprache
 
+* INSERT
+
+```sql
+-- insert a item with only available values
+INSERT INTO User(name)
+VALUES(bob);
+
+-- insert a item with all attribtte values
+INSERT INTO User
+VALUES(bob, P@ssw0rd);
+
+-- insert a item with select items from other table
+-- static value is also possible, e.g. P@ssw0rd
+INSERT INTO User (
+   SELECT name, 'P@ssw0rd'
+   FROM Person
+   WHERE name = bob);
+```
+
+* UPDATE
+
+```sql
+UPDATE User
+SET name = Bob
+WHERE name = bob;
+```
+
+* DELETE
+
+```sql
+-- delete items from a table
+DELETE FROM User
+WHERE name = bob;
+
+-- delete all items, empty table
+DELETE FROM User;
+
+-- delete a table
+DELETE TABLE User;
+```
+
 ## 7.5 Daten Sichten
+
+```sql
+CREATE VIEW KundeKauftProdukttypen
+  AS SELECT kundenName, kundenVorname, produktTyp
+       FROM Kunden NATURAL JOIN Kauft NATURAL JOIN Produkt
+      WHERE ort='Essen';
+```
 
 ## 7.6 Daten Kontroll Sprache
 
@@ -162,8 +247,81 @@ LIKE 'M__R'
 
 ## 8 Storage and Index structures, Query optimization
 
+* Operationen-Baum
+* Operationen-Optimierung
+
 ## 9.1 Concurrency Control / Transaktionsverfahren
+
+* Probleme bei Parallelarbeit auf DB
+  * **Lost Updates** R1 R2 W2 W1
+  * **Dirty Read** R1 R2 W1
+  * **Non-Repeatable Read** R1 R2 W1 R2
+  * **Phantom Read** R1 INSERT_2 R1
+* ACID Kriterium
+  * Unteilbarkeit (atomicity)
+  * Konsisitenz (consistency)
+  * isolution (isolution)
+  * Dauerhaftigkeit (durability)
+* Abhängigkeitsgraph
+  * Konflikt Bedingungen : at least a transaction want to write
 
 ## 9.2 Concurrency Control / Synchronisationsverfahren
 
+* Sperrverfahren
+  * **share lock** Lesesperre
+    * several transactions could share read lock
+  * **exclusive lock** Schreibsperre
+    * a transaction can get exclusive lock only when no transaction has read lock on the traget object
+* Fortgepflanztes Rollback
+  * Problem : abgeschlossene Transaktionen müssen zurück gesetzt werden, im Widerspruch zum "durability"
+* Zwei Phasen Sperr Protokoll
+  * Wachstumsphase und Schrumpfungsphase
+  * Variante
+    * Einfache Zweiphasigkeit
+    * Preclaiming
+    * Strikte Zweiphasigkeit
+    * Preclaiming und Strikte
+* Deadlock
+  * Gegenseitiger Ausschluss
+  * Nichtentziehbarkeit
+  * Warte und Halte-Fest
+  * Mehrfachanforderung
+* Auflösung von Deadlock
+  * Prevention
+  * Avoid
+  * Time-out
+  * Detection and Resolution
+* Sperren über Prädikate
+  * logische Sperren
+  * besetigt das Problem von "Phantom Read"
+* isolutionsstufen
+  * **Read uncomitted** 共享锁忽略读写锁
+  * **Read committed**  读锁在读取时上锁，写锁在整个事务期间上锁
+  * **Repeatable Read** 读锁和写锁在整个事务期间上锁
+  * **Serializable**
+
+|                  | Dirty Read | Non-Repeatable Read | Lost Update | Phantom |
+| ---------------- | ---------- | ------------------- | ----------- | ------- |
+| Read uncommitted | Ja         | Ja                  | Ja          | Ja      |
+| Read committed   | Nein       | Ja                  | Ja          | Ja      |
+| Repeatable Read  | Nein       | Nein                | Nein        | Ja      |
+| Serializable     | Nein       | Nein                | Nein        | Nein    |
+
 ## 9.3 Fehlertoleranz / Recovery
+
+**Gegeben sein LOG** `<T, var, old_value, new_value>`
+* **UNDO**
+  * write old_value on disk
+  * UNDO for all not finished transactions
+* **REDO**
+  * write new_value on disk
+  * REDO for all finished transactions
+* Recovery Policy
+  * Not-Steal / Steal
+  * Force / Not-Force
+* ![](https://dl.dropboxusercontent.com/u/55616012/note/recovery.svg)
+
+|           | steal      | not steal |
+| --------- | ---------- | --------- |
+| force     | UNDO       | -         |
+| not force | REDO, UNDO | REDO      |
