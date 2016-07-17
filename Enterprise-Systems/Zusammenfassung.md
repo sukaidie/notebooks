@@ -460,3 +460,86 @@
     1. Fachhkonzept
     2. Datenverarbeitung-Konzept
     3. Technische Implementierung
+
+## Kapitel 7 : Organisationsebene
+
+* Unternehmensveränderungen
+  * Definition : simultane Transformation mehrerer organisationaler Elemente (bspw. Strategie, Prozesse), die verschiedene Ebenen des Unternehmens betrifft
+* Management von Unternehmensveränderungen
+  * IST:  Bestehende Organisation mit deren Mitgliedern
+  * Intendierte Unternehmensveränderungen
+  * Zielbild & Prozess & faktische Unternehmensveränderungen
+  * SOLL: Veränderte Organisation mit den „veränderten“ Mitgliedern
+* Grad der Unternehmensveränderung  und der erforderliche Führungsstil
+  * Coercive, Directive, Consultative, Collaborative
+  * Fine Tuning, Incremental Adjustment, Modular Transformation, Corporate Transformation
+  * Forced Evolution, Participative Evolution
+  * Dictatorial Transformation, Charismatic Transformation
+* Notwendigkeit und Umsetzung strategischer Veränderungen
+  * Exzessive Veränderungen
+  * Vorteilhafter Stilltstand
+  * Vorteilhafte strategische Veränderungen
+  * Unzureichende strategische Veränderungen
+* Einflussfaktoren und Erfolgsfaktoren des Change Managements
+  * Umwelt
+    * Wettbewerber
+    * Absatzmarkt
+    * Technologische Entwicklungen
+    * Gesetzliche Rahmenbedingungen
+  * Interne Adaption
+    * Strategie
+    * Unterstützung Topmanagement
+    * Unternehmenskultur
+    * Kommunikation
+* Promotorenmodell
+  * Widerstände
+    * Kognitive Barrieren des Nicht-Wissens
+      * Fachpromotor, Gate-Keeper, Lehrer, Technologe
+    * Psychische Widerstände des Nicht-Wollens
+      * Machtpromotor, CEOs, Executive Champions, Idea, Facilitators
+    * Organisatorische Widerstände des Nicht-Dürfens
+      * Gute Organisationskenntnis, Diplomatische Kommunikationsfähigkeit
+    * Interorganisationale Widerstände
+      * Zugang zu den kritischen Ressourcen im Netzwerk
+      * Fähigkeit zur Netzwerkverknüpfung
+      * Persönliches Charisma
+      * Position im sozialen System
+    * Finanzielle Widerstände des Nicht-Könnens
+      * Unternehmer, Investoren, Business Innovators, Sponsoren
+  * Prämissen
+    * Korrespondenzannahmen : unterschiedlicher und spezifischer „Energien“
+    * Arbeitsteilungsannahme : die Energien von unterschiedlichen Personen eingebracht
+    * Interaktionsannahme : die unterschiedlichen Promotoren eng zusammen arbeiten
+* Die Ausgestaltung des Change Managements
+  * Struktur : Wettbewerber, Technologie, Strategie, Organisation, Ressourcen
+  * Kultur : Symbole, Werte & Normen, Grundannahmen
+  * Individuum : Fähigkeiten, Rollen, Verhalten
+* Wesentliche Phasen interner Veränderung
+  * Pionierphase
+  * Differenzierungsphase
+  * Intergrationsphase
+* Woran scheitern Projekte?
+  * Widerstand der Mitarbeiter
+  * Mangelhafte Prozesssteurung
+  * Zu schnelles Veränderungstempo
+  * Unklare Zielsetzung
+* Widerstandsarten im Change Management
+  1. Generelles Ablehnen des zunächst Fremden
+  2. Reaktanz
+  3. Kommunikative Missverständnisse
+     * Die vier Seiten einer Medaille
+       * Sachinhalt
+       * Selbstoffenbarung
+       * Appell
+       * Beziehung
+* Erscheinungsformen von Widerständen
+  * Widerspruch, Aufregung, Ausweichen, Lustlosigkeit
+* Was fördert / behindert die Widerstände?
+  * Unternehmensebene
+    1. Starke Unternehmenskultur
+    2. Generelle Ablehnung von Externen
+    3. Rein kurzfristige Erfolgsorientierung
+  * Mitarbeiterebene
+    1. Trägheit
+    2. Unwissen
+    3. Schlechte Erfahrungen 
