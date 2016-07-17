@@ -1,4 +1,4 @@
- ## 02 Grundlagen
+## 02 Grundlagen
 
 #### Information security
 
@@ -389,11 +389,75 @@
   * Token Authentication
   * Biometric Authentication
   * Remote User Authentication
+    * Direct Authentication
+    * Chanllenge response Authentication
+    * ![](https://dl.dropboxusercontent.com/u/55616012/note/auth.svg)
 * Two-Party Authentication
+  * Extensible Authentication Protocol (EAP)
+  * Remote Access Dial in user Service (RADIUS)
+    * Network Access Server (NAS)
+    * RADIUS Server
+  * 802.1X Authentication
+    * Supplicant
+    * Authenticator (NAS, RADIUS Client)
+    * Uncontrolled Port
+    * Controlled Port
+    * Authentication Server (RADIUS Server)
+  * 802.11
+    * open System
+    * shared key Authentication
+      * 路由器生产随机数字(Chanllenge)，填写共享密码，将哈希值(Chanllenge + Password)发给路由
+      * Chanllenge response
+      * WEP 有线等效加密
+  * 802.11i
+    * WPA
+      * TKIP加密
+      * PSK : preshared key Authentication 个人用户简化版
+      * 企业版本 (EAP + RADIUS)
+    * WPA2
+      * TKIP, AES加密
 * Trusted third-party Authentication
+  * Kerberos
 
-## 15-a IPSec
+## 15-A IPSec
 
-## 15-b SSL/TLS and SSH
+**Security Option**
+
+| Appliacation | Transport | Network | Data Link |
+| ------------ | --------- | ------- | --------- |
+| PGP, HTTPS   | SSL/TLS   | IPSec   | WLAN, PPP |
+
+* IP Security Architecture
+  * Authentication Header (AH)
+  * Encapsulating Security Payload (ESP)
+  * Internet Security Association and key management protocol
+  * Internet key Exchange
+
+
+## 15-B SSL/TLS and SSH
+
+* SSL/TLS Architecture
+  * Record Protocol
+  * Handshake Protocol
+  * Change Cipher Spec Protocol
+  * Alert Protocol
+* Record Protocol
+  * content type
+  * version
+  * length
+  * Protocol Message
+    * Handshake Protocol
+    * Change Cipher Spec Protocol
+    * Alert Protocol
+    * Appliacation Data (eg. Http Message)
+  * MAC
+* Handshake Protocol
+  * ![](https://dl.dropboxusercontent.com/u/55616012/note/ssl.svg)
+* SSH
+  * Transport Layer Protocol
+    * key exchange
+    * verify signature
+  * User Authentication Protocol
+  * Connection Protocol
 
 ## 16 VPN
