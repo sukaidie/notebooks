@@ -178,7 +178,6 @@
 * **Migrations-Transparenz** Objekte können an andere Orte bewegt werden
 * **Leistungs-Transparenz"** Lastverteilung
 * **Skalierbarkeits-Transparenz** funktionale Erweiterung
-
 * Reference
   * 访问透明性：用相同的操作访问本地资源和远程资源。  
   * 位置透明性：不需要知道资源的物理或网络位置（例如，哪个建筑物或IP地址）就能够访问它们。  
@@ -190,6 +189,34 @@
   * 伸缩透明性：系统和应用能够进行扩展而不改变系统结构或应用算法。
 
 ## 4. Middleware
+
+**Bewertung - Anforderungen**
+
+| Middleware         | JAVA RMI       | CORBA          | Web Service    | REST           |
+| ------------------ | -------------- | -------------- | -------------- | -------------- |
+| Gemeinsame Nutzung | :+1:           | :+1:           | -              | :+1:           |
+| Offenheit          | :ok_hand:      | :+1:           | :+1:           | :+1:           |
+| Nebenläufigkeit    | :ok_hand:      | :ok_hand:      | -              | :shit:         |
+| Skalierbarkeit     | :ok_hand:      | :ok_hand:      | -              | :+1:           |
+| Fehlertoleranz     | :ok_hand:      | :ok_hand:      | -              | :shit:         |
+
+**Bewertung - Transparenz**
+
+| Middleware         | JAVA RMI       | CORBA          | Web Service    | REST           |
+| ------------------ | -------------- | -------------- | -------------- | -------------- |
+| Zugriff            | :+1:           | :+1:           | :ok_hand:      | :shit:         |
+| Ort                | :ok_hand:      | :ok_hand:      | :ok_hand:      | :+1:           |
+| Replikation        | :shit:         | :+1:           | :ok_hand:      | :shit:         |
+| Migration          | :shit:         | :+1:           | :ok_hand:      | :shit:         |
+| Leistung           | :shit:         | :+1:           | :ok_hand:      | :shit:         |
+| Skalierbarkeit     | :shit:         | :+1:           | :ok_hand:      | :shit:         |
+| Nebenläufigkeit    | :shit:         | :+1:           | :ok_hand:      | :shit:         |
+| Fehler-Transparenz | :shit:         | :+1:           | :ok_hand:      | :shit:         |
+
+:+1: Gegeben
+:ok_hand: Beschränkt, abhängig von Plattform und Implementierung
+:shit: Nicht Gegeben
+
 
 ### 4.1 Prinzipien
 
@@ -287,7 +314,7 @@ public interface Service extends Remote {
     ```java
     public class Server
     extends UnicastRemoteObject
-    implements Service {  ... }
+    implements Service { ... }
     ```
 
 * Pull to Registry
@@ -311,33 +338,35 @@ public interface Service extends Remote {
   ```
 
 **Client-Stub**
- * Hat die folgenden Aufgaben:
-   1. Erstellen einer Verbindung zur entfernten JVM
-   2. Marshalling des Remote-Aufrufs inkl. Parametern
-   3. Synchronisation sicherstellen (auf Antwort warten)
-   4. Unmarshalling des Ergebnisses oder der Exception
-   5. Ergebnis (oder Exception) an Aufrufenden weiterleiten
- * Einen Client-Stub bekommen
+* Hat die folgenden Aufgaben:
+  1. Erstellen einer Verbindung zur entfernten JVM
+  2. Marshalling des Remote-Aufrufs inkl. Parametern
+  3. Synchronisation sicherstellen (auf Antwort warten)
+  4. Unmarshalling des Ergebnisses oder der Exception
+  5. Ergebnis (oder Exception) an Aufrufenden weiterleiten
+* Einen Client-Stub bekommen
 
-   ```java
-   Service service = (Service)registry.lookup("server");
-   ```
+  ```java
+  Service service = (Service)registry.lookup("server");
+  ```
 
- * Entfernte Aufruf
-   * Primitive Datentypen un d Objekt werden als Kopie übertragen
-     (Pass by value)
-   * Remote Objekte werden als entfernte Referenz übertragen
-     (Pass by reference)
+* Entfernte Aufruf
+  * Primitive Datentypen un d Objekt werden als Kopie übertragen
+   (Pass by value)
+  * Remote Objekte werden als entfernte Referenz übertragen
+   (Pass by reference)
+
 #### Remote Object Activation
-#### Dynamisches Laden von Klassen
+####  Dynamisches Laden von Klassen
 
 ## 4.3 CORBA
 
 ## 4.4 XML und JSON
 
 #### Heterogene Middleware
-  * **Interoperation** *The ability of two systems to perform a given task using a single set of rules*
-  * **Interworking** *The ability of two systems to perform a given task that each systems implements a different set of rules*
+
+* **Interoperation** *The ability of two systems to perform a given task using a single set of rules*
+* **Interworking** *The ability of two systems to perform a given task that each systems implements a different set of rules*
 
 #### XML
 
@@ -394,7 +423,8 @@ public interface Service extends Remote {
 
 ## 4.5  Web Services
 
-#### Architektur
+* Architektur
+  * ![](https://dl.dropboxusercontent.com/u/55616012/note/webservice.svg)
 * Interface-Beschreibung (Registry)
   * **WSDL**: Webservice Description Language
   * Nachrichtenformat, Datentypen, Protocol, URL
@@ -403,4 +433,58 @@ public interface Service extends Remote {
 * Abwicklung des Aufrufs (Message)
   * **SOAP** Simple Object Access Protocol
 
-![](https://dl.dropboxusercontent.com/u/55616012/note/webservice.svg)
+```xml
+<!--
+String login(String login_request) { return login_response; }
+Input Parameter of login()
+-->
+<message name="login_request">
+   <part name="req" type="xs:string"/>
+</message>
+<!-- Return Parameter of login() -->
+<message name="login_response">
+   <part name="res" type="xs:string"/>
+</message>
+<!-- bining a port with Methode and messages -->
+<portType name="login_port">
+   <operation name="login">
+     <input message="login_request"/>
+     <output message="login_response"/>
+   </operation>
+</portType>
+<!-- bining a port and relative SOAP Definition -->
+<binding type="login_port" name="login_binding">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation>
+      <input><soap:body use="literal"/></input>
+      <output><soap:body use="literal"/></output>
+   </operation>
+</binding>
+<!--publish a service to url-->
+<service name="loginService">
+  <port name="loginServerPort" binding="login_binding">
+      <soap:address location="http://localhost/login"/>
+  </port>
+</service>
+
+<!-- SOAP Message -->
+<soapenv:Envelope>    
+    <soapenv:Header/>
+    <soapenv:Body>
+        <loginService:getPersonByName>
+          <login:arg_0>
+            name
+          </login:arg_0>
+        </loginService:getPersonByName>
+    </soapenv:Body>
+</soapenv:Envelope>
+```
+
+## 4.6 REST
+
+* **Resource**
+* **Resource Identifier** URL
+* **Representaion** JSOn or XML
+* **Representaion Identifier** MIME type
+* **Resource metadata**
+* **Control data** GET / PUT / POST / DELETE    
