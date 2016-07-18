@@ -418,6 +418,10 @@
       * TKIP, AES加密
 * Trusted third-party Authentication
   * Kerberos
+    * Key Distribution Center
+      * **Authentication Server** generate TGT (Ticket Granting Ticket)
+      * **Ticket Granting Server** generate SGT (Server Granting Ticket)
+    * ![](https://dl.dropboxusercontent.com/u/55616012/note/kerberos.svg)
 
 ## 15-A IPSec
 
@@ -431,8 +435,14 @@
   * Authentication Header (AH)
   * Encapsulating Security Payload (ESP)
   * Internet Security Association and key management protocol
-  * Internet key Exchange
-
+  * Internet key Exchange  
+* AH and ESP
+  * ![](https://dl.dropboxusercontent.com/u/55616012/note/ipsec.svg)
+* Internet Key Exchange
+  * provides dynamically negotiation of IPSec Security Associations
+  * Modes
+    * Main Mode Exchange
+    * Aggressive Mode Exchange
 
 ## 15-B SSL/TLS and SSH
 
@@ -461,3 +471,48 @@
   * Connection Protocol
 
 ## 16 VPN
+
+* Glossar
+  * VPN virtual private network
+  * POP Point of presence
+  * PPP Point-to-Point Protocol
+  * PPTP Point-to-Point Tunneling Protocol
+  * GRE Generic Routing Encapsulation
+  * NAS Network access Server
+  * MPLS  Multi-Protocol Label Switching
+* **Tunneling** Encapsulation of a packet into an encrypted packet
+  * End point
+    * Authentication
+    * Access Control
+    * Nehotiation of security services
+  * Encapsulation protocol
+* VPN devices
+  * VPN Gateway
+  * VPN Client
+* Security services
+  * End-to-POP
+  * End-to-LAN
+  * End-to-End
+  * POP-to-POP
+  * LAN-To-POP
+  * LAN-to-LAN
+* VPN Architecture
+  * Site-Site intranet VPN :  *LAN-to-LAN Mode*
+  * Remote access VPN :  *End-to-LAN Mode*
+  * Extranet VPN :  *combination*
+* VPN Tunneling Protocol
+  * Generic Routing Encapsulation
+    * Encapsulation and Forwarding
+    * GRE Header
+      * Checksum : provide data integrity
+      * Protocol Type :  indicate the Protocol type of Payload
+  * Point-to-Point Tunneling Protocol (PPTP)
+    * communication between **Access Control (PAC)** and **Netword server (PNS)**
+    * Steps
+      * Connecting to internet using PPP
+      * establishing a control channel
+        * PPP and GRE parameters via TCP Packet
+      * PPTP tunnel is established
+      * A PPP connection between PAC and PNS
+      * send IP-Packet(使用局域网地址 with local address) inside PPP tunnel
+    * ![](https://dl.dropboxusercontent.com/u/55616012/note/pptp.svg)
