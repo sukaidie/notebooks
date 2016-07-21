@@ -9,15 +9,14 @@
      * Beziehungen zwischen Attributen (Inputs, Outputs, Zustände) aufweist
      * aus miteinander verknüpften Teilen besteht und
      * von der Umwelt oder einem Supersystem (hierarchisch) abgegrenzt wird.
-
-   **Welche Konzeptualisierungsmuster gibt es?**
-   * Strukturales Konzept
-   * Funktionales Konzept
-   * Hierarchisches Konzept
-3. **Was ist Digitalisierung?**
+3. **Welche Konzeptualisierungsmuster gibt es?**
+     * Strukturales Konzept
+     * Funktionales Konzept
+     * Hierarchisches Konzept
+4. **Was ist Digitalisierung?**
    * Prozess der „Übertragung des Menschen und seiner Lebens- sowie Arbeitswelten auf eine digitale Ebene.“
-4. **Was wird mit der Digitalisierung intendiert?**
-5. **Welche grundsätzlichen Wirkungen haben informationstechnische Systeme in Unternehmen?**
+5. **Was wird mit der Digitalisierung intendiert?**
+6. **Welche grundsätzlichen Wirkungen haben informationstechnische Systeme in Unternehmen?**
 
 ### 2. Entfaltungsgegenstand
 
@@ -32,10 +31,10 @@
    * Der Beitrag der IT zum Unternehmenserfolg ist abhängig von Organisationsstrukturen und von den Geschäftsprozessen und
    * Diese sind wiederum an der Strategie und den Zielen des Unternehmens auszurichten.
 5. **Wie hängen Business Strategie, IT-Strategie, Unternehmensinfrastruktur und IT-Infrastruktur zusammen?**
-   ![](https://dl.dropboxusercontent.com/u/55616012/note/es_01.PNG)
+   * ![](https://dl.dropboxusercontent.com/u/55616012/note/es_01.svg)
 6. **Warum wird bei Transformationsprogrammen immer davon ausgegangen, dass es erhebliche IT-Implikationen gibt und zudem die IT immer mehr zum Treiber von Transformationsprogrammen wird?**
 7. **Erklären Sie kurz das Modell des Strategic Alignments nach Henderson und Venkatraman.**
-   ![](https://dl.dropboxusercontent.com/u/55616012/note/es_02.PNG)
+   * ![](https://dl.dropboxusercontent.com/u/55616012/note/es_02.svg)
    * Das Model beschreibt 4 dominante Perspektiven der Abstimmung:
      * Strategic Execution View
      * Technology Transformation View
@@ -66,7 +65,7 @@
    * „Jedes Unternehmen ist eine Ansammlung von Tätigkeiten, durch die sein Produkt entworfen, hergestellt, vertrieben, ausgeliefert und unterstütztwird. All diese Tätigkeiten lassen sich in einer Wertkette darstellen.“
    * zur Verbesserung der Wertschöpfungsaktivitäten
    * zur Verbesserung der unterstützenden Aktivitäten
-   *  zur Integration von Lieferanten und Kunden oder anderen Partnern im Wertschöpfungsnetzwerk
+   * zur Integration von Lieferanten und Kunden oder anderen Partnern im Wertschöpfungsnetzwerk
 4. **Erklären Sie die Idee der Portfolio-Analyse und beschreiben Sie das Vorgehen zur Erstellung eines Portfolios.**
    * Idee
      * Aufteilung des Risikoproblems auf die mehrere Dimensionen, in dem die einzelnen strategischen Geschäftseinheiten positioniert werden (keine additive Sicht der Zentrale)
@@ -162,3 +161,11 @@
         * Ebene 2: Datenverarbeitung-Konzept
         * Ebene 3: Technische Implementierung
 15. **In welcher Reihenfolge sollten die einzelnen Sichten und die einzelnen Beschreibungsebenen miteinander verbunden werden? Oder gibt es keine definierte Reihenfolge, wenn Software entwickelt werden soll?**
+
+### 7 Organisationsebene
+
+1. **Was ist eine Unternehmensveränderung und welche Typen davon kennen Sie?**
+2. **Haben unterschiedliche Unternehmensveränderungen differenzierte Vorgehensweisen des Change Managements zu eigen?**
+3. **Was ist das Promotorenmodell? Was soll erklärt werden? Was sind die Bestandteile?**
+4. **Welche Klassen von Widerständen in Transformationsprojekten können unterschieden werden? Wie würden Sie diese in realen Projekten überwinden wollen?**
+5. **Aus welchen Elementen kann ein Vorgehensmodell des Change Managements bestehen und welche Erfolgsfaktoren sind dabei exemplarisch unterscheidbar?**
