@@ -32,7 +32,7 @@
 *Attribtte should be automar.*
 
 2NF : 普通键依赖全部候选键，即一组候选（主）键构成超键可以标示唯一实例
-*it does not exist functional dependencies between normal keys and candidate keys.*
+*it does not exist functional dependencies between normal keys and candidate keys (UNIQUE).*
 
 3NF ： 普通键之间没有函数关系
 *it does not exist functional dependencies between normal keys.*
@@ -40,6 +40,12 @@
 **Bedingung zur Zerlegung**
 * Abhängigkeitstreue
 * Verbundstreue
+
+**key type**
+* normal key
+* candidate key (UNIQUE)
+* primary key (UNIQUE, NOTNULL)
+* foreign key
 
 
 ## 6.5 Relationale Algebra
@@ -131,6 +137,15 @@ LIKE 'M__R'
 ```
  SET CONSTRAINTS 会覆盖 DEFERABLE INITIALLY { DEFERRED | IMMEDIATE } 的设定，用于管理员指定的类型验证时间点
 
+### Integritätsbedingungen
+
+NOT NULL
+UNIQUE (Schlüsselkandidaten)
+PRIMARY KEY (Primärschlüssel, UNIQUE AND NOT NULL)
+FOREIGN KEY (Fremdschlüssel)
+CHECK
+DEFAULT
+
 ### Anlegen Tabelle
 ```sql
  CREATE TABLE TableName (
@@ -149,7 +164,7 @@ LIKE 'M__R'
  );
 ```
 
-* 外键必须是外表的主键
+* A FOREIGN KEY in one table points to a PRIMARY KEY in another table. 外键必须是外表的主键
 * CHECK-Clausel
   * Über Domain
   * Über Tabelle
@@ -157,37 +172,39 @@ LIKE 'M__R'
 
 ## 7.3 Datenbank Anfrage Sprache
 
-* SELECT
- * ALL | DISTINCT
- * AS
- * Arithmetische Ausdrücke
- * Aggregatfunctionen
-   * COUNT *(Null Value will be not counted)*
-   * AVG
-   * SUM
-   * MAX
-   * MIN
-* FROM
- * **CROSS JOIN**
- * **NATURAL** [LEFT | RIGHT | FULL] **JOIN**
- * [LEFT | RIGHT | FULL] **JOIN ON()**
- * [LEFT | RIGHT | FULL] **JOIN USING()**
-* WHERE
- * Vergleichsprädikate
- * Nullmarken
- * Nullmarken in Boolschen Ausdrücken
- * GROUP BY
- * HAVING
- * IN | EXISTS | ANY / SOME | ALL
+1. FROM
+   * **CROSS JOIN**
+   * **NATURAL** [LEFT | RIGHT | FULL] **JOIN**
+   * [LEFT | RIGHT | FULL] **JOIN ON()**
+   * [LEFT | RIGHT | FULL] **JOIN USING()**
+2. WHERE
+   * \> | < | =
+   * BETWEEN ... AND ...
+   * LIKE
+   * IS [NOT] NULL
+   * IN | EXISTS | ANY / SOME | ALL
+3. GROUP BY
+4. HAVING
+5. SELECT
+   * ALL | DISTINCT
+   * AS
+   * Arithmetische Ausdrücke
+   * Aggregatfunctionen
+     * COUNT *(Null Value will be not counted)*
+     * AVG
+     * SUM
+     * MAX
+     * MIN
+ 6. ORDER BY *column_name ASC* | DESC
 
 | EXISTS | Alternative |
 | ------ | ----------- |
-| WHERE EXISTS(SELECT * FROM ...) | WHERE 0 < (SELECT COUNT(*) FROM ...) |
-| WHERE EXISTS(SELECT * FROM ...) | WHERE 0 = (SELECT COUNT(*) FROM ...) |
+| WHERE     EXISTS(SELECT * FROM ...) | WHERE 0 < (SELECT COUNT(*) FROM ...) |
+| WHERE NOT EXISTS(SELECT * FROM ...) | WHERE 0 = (SELECT COUNT(*) FROM ...) |
 
 ## 7.4 Daten Manipulation Sprache
 
-* INSERT
+#### INSERT
 
 ```sql
 -- insert a item with only available values
@@ -206,7 +223,7 @@ INSERT INTO User (
    WHERE name = bob);
 ```
 
-* UPDATE
+#### UPDATE
 
 ```sql
 UPDATE User
@@ -214,7 +231,17 @@ SET name = Bob
 WHERE name = bob;
 ```
 
-* DELETE
+#### ALTER
+
+```sql
+ALTER TABLE table_name
+ADD column_name column_definition
+
+ALTER TABLE table_name
+DROP column_name
+```
+
+#### DELETE
 
 ```sql
 -- delete items from a table
@@ -225,7 +252,7 @@ WHERE name = bob;
 DELETE FROM User;
 
 -- delete a table
-DELETE TABLE User;
+DROP TABLE User;
 ```
 
 ## 7.5 Daten Sichten
