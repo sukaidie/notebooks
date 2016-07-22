@@ -139,12 +139,12 @@ LIKE 'M__R'
 
 ### Integritätsbedingungen
 
-NOT NULL
-UNIQUE (Schlüsselkandidaten)
-PRIMARY KEY (Primärschlüssel, UNIQUE AND NOT NULL)
-FOREIGN KEY (Fremdschlüssel)
-CHECK
-DEFAULT
+* NOT NULL
+* UNIQUE (Schlüsselkandidaten)
+* PRIMARY KEY (Primärschlüssel, UNIQUE AND NOT NULL)
+* FOREIGN KEY (Fremdschlüssel)
+* CHECK
+* DEFAULT
 
 ### Anlegen Tabelle
 ```sql
