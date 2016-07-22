@@ -482,9 +482,84 @@ Input Parameter of login()
 
 ## 4.6 REST
 
+#### Konzepte
+
+* Client-Server *通信只能由客户端单方面发起，表现为请求-响应的形式*
+* Zustandslosigkeit *通信的会话状态（Session State）应该全部由客户端负责维护*
+* Caching *响应内容可以在通信链的某处被缓存，以改善网络效率*
+* Einheitliche Schnittstelle *统一接口*
+  * Adressierbarkeit von Ressourcen  *Uniform Resource Locator (URL)*
+  * Repräsentationen zur Veränderung von Ressourcen *HTML, JSON oder XML*
+  * Selbstbeschreibende Nachrichten *HTTP Protocol*
+  * Hypermedia as the Engine of Application State
+* Mehrschichtige Systeme *每个组件只能访问与其交互的紧邻层，将架构分解为若干等级的层*
+* Code on Demand (optional) *通过下载执行JS代码对客户端功能扩展*
+
+#### Datenelemente
+
 * **Resource**
 * **Resource Identifier** URL
 * **Representaion** JSOn or XML
 * **Representaion Identifier** MIME type
 * **Resource metadata**
-* **Control data** GET / PUT / POST / DELETE    
+* **Control data** GET / PUT / POST / DELETE
+
+## 5 Komponentenbasierte Anwendungen
+
+#### Application Server
+
+* Komponentenausführung
+  * Ausführungsumgebung für Komponenten
+  * Verwaltung des Lebenszyklus von Komponenten
+  * Kommunikation zwischen Komponenten
+* Verteilung
+  * Clientseitig ：GUI
+  * Server ： Zentrale Dienste und Authentication
+* Nutzung
+  * Zugriff auf Komponenten
+  * Kommerzielle Verwertung der Nutzung
+* Skalierung
+  * Server-Instanzen arbeiten auf verschiedenen physikalischen Maschinen
+  * Last wird verteilt zwischen Maschinen
+
+#### Container
+
+* Konzept
+  * Application Server führt Komponenten nicht direkt aus, sondern Container
+  * Container können Komponenten zweckspezifisch verwalten
+  * Nutzung von gemeinsamen Diensten des Application Servers
+* Namensdienste 组件命名
+* Metadaten 配置文件
+* Pakete
+  * Inhalt
+    * Class and compiled library - JAR
+    * Deployment Deskriptoren - WEB-INF
+    * Statische Ressourcen - HTML, JSP, CSS, JPEG
+  * Typen
+    * compiled library - JAR
+    * Web application - WAR
+    * Enterprise Archive – EAR
+      * JARs und WARs
+
+#### Persistenz
+
+* Mapping von Datenbank-Informationen auf Objekte
+* Restriktionen für Attribute
+* Enterprise Java Beans (EJB)
+
+#### Geschäftslogik
+
+* EJB Session Beans
+* JDNI
+
+#### Web / UI
+
+* Generierung von Inhalten
+  * Statisch, z.B. werden Bilder nur ausgeliefert
+  * Vorlagenbasiert, z.B. HTML-Templates, die mit Inhalten befüllt werden
+  * Programmcode, z.B. Behandlung spezieller Anfragen   
+* Servlet
+* Java Server Pages
+  * Statisches HTML wird deklarativ geschrieben
+  * Java-Code wird an gewünschter Stelle eingebettet (vgl. PHP)
+  * Intern werden JSPs bei erster Ausführung zu Servlets kompiliert
