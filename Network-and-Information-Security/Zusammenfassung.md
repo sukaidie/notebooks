@@ -4,7 +4,6 @@
 
 * **Datensicherheit** Data security
   * Mit Datensicherheit wird der Schutz von Daten hinsichtlich gegebener Anforderungen an deren **Vertraulichkeit, Verfügbarkeit und Integrität** bezeichnet.
-
 * **Datenschutz** Data protection and privacy
   * Datenschutz soll den Einzelnen davor schützen, dass er durch den Umgang mit seinen personenbezogenen Daten in seinem Persönlichkeitsrecht beeinträchtigt wird.
 
@@ -25,7 +24,7 @@
 ## 03 Terms
 
 * Cryptology
-  * Cryptology
+  * Cryptography
   * Cryptanalysis
 * Information Hiding
   * Steganography
@@ -43,8 +42,8 @@
 |                   | Substitution | Caesar      | Vigenère |
 | ----------------- | ------------ | ----------- | -------- |
 | Letter Frequency  | not changed  | not changed | changed  |
-| (max) key length  | 1            | n           | n        |
-| key sprace        | 25           | n!          | 26^n     |
+| (max) key length  | 1            | 26          | n        |
+| key sprace        | 25           | 26!         | 26^n     |
 
 * The basic Principles of Classical Cryptography
   * Substituion
@@ -68,6 +67,8 @@
 
 * Block cipher
   * Structure of block cipher
+    * key schedule
+    * data Path
   * Iterative Block cipher
     * Use the same round transformation in all rounds **except of initial or final round**
   * Key-alternating block cipher
@@ -393,29 +394,31 @@
     * Chanllenge response Authentication
     * ![](https://dl.dropboxusercontent.com/u/55616012/note/auth.svg)
 * Two-Party Authentication
-  * Extensible Authentication Protocol (EAP)
-  * Remote Access Dial in user Service (RADIUS)
-    * Network Access Server (NAS)
-    * RADIUS Server
   * 802.1X Authentication
-    * Supplicant
-    * Authenticator (NAS, RADIUS Client)
-    * Uncontrolled Port
-    * Controlled Port
-    * Authentication Server (RADIUS Server)
-  * 802.11
+    * Machanism
+      * Extensible Authentication Protocol (EAP)
+      * Remote Access Dial in user Service (RADIUS)
+        * Network Access Server (NAS)
+        * RADIUS Server
+    * components
+      * Supplicant
+      * Authenticator (NAS, RADIUS Client)
+      * Uncontrolled Port
+      * Controlled Port
+      * Authentication Server (RADIUS Server)
+  * 802.11X
     * open System
     * shared key Authentication
       * 路由器生产随机数字(Chanllenge)，填写共享密码，将哈希值(Chanllenge + Password)发给路由
       * Chanllenge response
       * WEP 有线等效加密
-  * 802.11i
-    * WPA
-      * TKIP加密
-      * PSK : preshared key Authentication 个人用户简化版
-      * 企业版本 (EAP + RADIUS)
-    * WPA2
-      * TKIP, AES加密
+
+| -              | 802.1X         | 802.11X        | WPA-Enterprise | WPA-SOHO       |
+| :------------- | :------------- | :------------- | :------------- | :------------- |
+| Authentication | EAP            | EAP            | EAP / RADIUS   | preshared key  |
+| Key management | support        | support        | support        | no             |
+| ciphering      | -              | TKIP           | TKIP / AES     | TKIP           |
+
 * Trusted third-party Authentication
   * Kerberos
     * Key Distribution Center
