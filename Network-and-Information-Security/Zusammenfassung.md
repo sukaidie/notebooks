@@ -434,27 +434,32 @@
 | ------------ | --------- | ------- | --------- |
 | PGP, HTTPS   | SSL/TLS   | IPSec   | WLAN, PPP |
 
-* IP Security Architecture
-  * Authentication Header (AH)
-  * Encapsulating Security Payload (ESP)
-  * Internet Security Association and key management protocol
-  * Internet key Exchange  
-* AH and ESP
-  * ![](https://dl.dropboxusercontent.com/u/55616012/note/ipsec.svg)
-* Internet Key Exchange
+**Internet Security Association and Key Management Protocol (ISAKMP)**
+* Security Association (SA)
   * provides dynamically negotiation of IPSec Security Associations
+  * Dataflow only one direction
+* Security policy Database (SPD)
+  * selector
+  * action
+* Authentication Header (AH) and Encapsulating Security Payload (ESP)
+  * ![](https://dl.dropboxusercontent.com/u/55616012/note/ipsec.svg)
+* Internet key Exchange (IKE)
   * Modes
     * Main Mode Exchange
     * Aggressive Mode Exchange
+  * Phase
+    1. ISAKMP SA establishment between 2 nodes
+    2. SA establishment for IPSec
 
 ## 15-B SSL/TLS and SSH
 
-* SSL/TLS Architecture
-  * Record Protocol
-  * Handshake Protocol
-  * Change Cipher Spec Protocol
-  * Alert Protocol
-* Record Protocol
+**SSL/TLS Architecture**
+* Process
+  * Fragment into **Record Protocol Units**
+  * Compress (Optional)
+  * Encrypt **Encrypt(Compress Unit + MAC)**
+  * Transmit
+* Record Protocol Unit
   * content type
   * version
   * length
@@ -464,14 +469,15 @@
     * Alert Protocol
     * Appliacation Data (eg. Http Message)
   * MAC
-* Handshake Protocol
+* Handshake Protocol [图解SSL/TLS协议](http://image.beekka.com/blog/2014/bg2014092003.png)
   * ![](https://dl.dropboxusercontent.com/u/55616012/note/ssl.svg)
-* SSH
-  * Transport Layer Protocol
-    * key exchange
-    * verify signature
-  * User Authentication Protocol
-  * Connection Protocol
+
+**SSH**
+* Transport Layer Protocol
+  * key exchange
+  * verify signature
+* User Authentication Protocol
+* Connection Protocol
 
 ## 16 VPN
 
