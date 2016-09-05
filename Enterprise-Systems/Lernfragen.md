@@ -4,19 +4,40 @@
 
 1. **Was ist ein Problem?**
    * Ein Problem ist das subjektive Diskrepanzempfinden zwischen einem tatsächlichen Ist- und einem gewünschten Soll-Zustand.
-2. **Was ist ein System? und wie ist der systemtheoretische Ansatz zu bewerten?**
+2. **Was ist ein System? Welche Konzeptualisierungsmuster gibt es und wie ist der systemtheoretische Ansatz zu bewerten?**
    * Ein System ist (das Modell) einer Ganzheit, die
      * Beziehungen zwischen Attributen (Inputs, Outputs, Zustände) aufweist
      * aus miteinander verknüpften Teilen besteht und
      * von der Umwelt oder einem Supersystem (hierarchisch) abgegrenzt wird.
-3. **Welche Konzeptualisierungsmuster gibt es?**
+    - Konzeptualisierungsmuster:
      * Strukturales Konzept
      * Funktionales Konzept
      * Hierarchisches Konzept
-4. **Was ist Digitalisierung?**
-   * Prozess der „Übertragung des Menschen und seiner Lebens- sowie Arbeitswelten auf eine digitale Ebene.“
-5. **Was wird mit der Digitalisierung intendiert?**
-6. **Welche grundsätzlichen Wirkungen haben informationstechnische Systeme in Unternehmen?**
+    - Bewertung:
+      * Der Systembegriff ist sehr abstrakt.
+        - Große Anwendungsbreite des Systembegriffs
+        - Elemente, Teil- und Subsysteme sowie deren Eigenschaften sind
+          - leistungsfähige gedankliche Konstrukte,
+          - die sich bei der systematischen Strukturierung betriebswirtschaftlicher Sachverhalte vielfach bewährt haben.
+      * Kritik in der Betriebswirtschaftslehre
+        - wegen der Abstraktheit ist die Systemtheorie so inhaltsleer, dass sie für „jeden“ Sachverhalt anwendbar ist
+        - Die systemische Sichtweise führt kaum über die deskriptiven Ebene hinaus.
+        - Beiträge zur Erklärung oder Gestaltung betriebswirtschaftlicher Sachverhalte werden praktisch nicht geleistet.
+      * Positive Resonanz in der WI
+        - Die Bewertung der Leistungsfähigkeit der gedankliche Konstrukte wird geschätzt,
+        - die „empirische Leere“ der Systemtheorie wird „hingenommen“.
+3. **Was ist Digitalisierung?**
+   * Unter Digitalisierung wird einerseits die Überführung ehemals nicht digital vorhandener in digitale Daten verstanden. Andererseits wird mit Digitalisierung auch der Prozess der Veränderung / Erfindung von Geschäftsmodellen, Produkten und Prozessen mit Hilfe von Informationstechnologien bezeichnet.
+4. **Was wird mit der Digitalisierung intendiert?**
+    * Digitalisierung:
+      - Information löst sich vom Objekt
+    * Skalierung:
+      - Unikate sind teuer, Serie preiswert
+    * Vernetzung:
+      - Netzeffekte füttern den Netzerfolg
+    * Miniaturisierung:
+      - Die Größe schrumpft, die Leistung steigt
+5. **Welche grundsätzlichen Wirkungen haben informationstechnische Systeme in Unternehmen?**
 
 ### 2. Entfaltungsgegenstand
 
